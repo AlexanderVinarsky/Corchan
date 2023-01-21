@@ -1,40 +1,54 @@
-package cordach.config;
+package corchan.config;
 
-public class SpringConfig {
-    package cordell.config;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.thymeleaf.spring5.SpringTemplateEngine;
+import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
+import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
-import org.springframework.web.filter.HiddenHttpMethodFilter;
-import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+@Configuration
+@ComponentScan("corchan")
+@EnableWebMvc
+public class SpringConfig implements WebMvcConfigurer {
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
+    private final ApplicationContext applicationContext;
 
-    public class MySpringMvcDispatcherSerlvetIntitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
-        @Override
-        protected Class<?>[] getRootConfigClasses() {
-            return null;
-        }
+    @Autowired
+    public SpringConfig(ApplicationContext applicationContext) {
+        this.applicationContext = applicationContext;
+    }
 
-        @Override
-        protected Class<?>[] getServletConfigClasses() {
-            return new Class[]{SpringConfig.class};
-        }
+    @Bean
+    public SpringResourceTemplateResolver templateResolver() {
+        SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
+        templateResolver.setApplicationContext(applicationContext);
+        templateResolver.setPrefix("/WEB-INF/views/");
+        templateResolver.setSuffix(".html");
+        templateResolver.setCharacterEncoding("UTF-8");
+        return templateResolver;
+    }
 
-        @Override
-        protected String[] getServletMappings() {
-            return new String[]{"/"};
-        }
-        @Override
-        public void onStartup(ServletContext aServletContext) throws ServletException {
-            super.onStartup(aServletContext);
-            registerHiddenFieldFilter(aServletContext);
-        }
+    @Bean
+    public SpringTemplateEngine templateEngine() {
+        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
+        templateEngine.setTemplateResolver(templateResolver());
+        templateEngine.setEnableSpringELCompiler(true);
+        return templateEngine;
+    }
 
-        private void registerHiddenFieldFilter(ServletContext aContext) {
-            aContext.addFilter("hiddenHttpMethodFilter",
-                    new HiddenHttpMethodFilter()).addMappingForUrlPatterns(null ,true, "/*");
-        }
-
+    @Override
+    public void configureViewResolvers(ViewResolverRegistry registry) {
+        ThymeleafViewResolver resolver = new ThymeleafViewResolver();
+        resolver.setTemplateEngine(templateEngine());
+        registry.viewResolver(resolver);
+        resolver.setCharacterEncoding("UTF-8");
+        resolver.setContentType("text/html; charset=UTF-8");
     }
 
 }

@@ -1,12 +1,12 @@
-package corchan;
+package corchan.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class bController {
-    @GetMapping("/b")
-    public String sayHello() {
+    @GetMapping("")
+    public String b() {
         return "b";
     }
 }
