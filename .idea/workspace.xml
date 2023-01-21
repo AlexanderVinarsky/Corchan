@@ -9,17 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65cef3a2-6eee-4ced-a9d2-9507ba00df85" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="65cef3a2-6eee-4ced-a9d2-9507ba00df85" name="Changes" comment="Start Page update">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/corchan/DAO/ThreadDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/corchan/DAO/ThreadMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/corchan/controllers/ThreadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/corchan/models/Thread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/start_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/start.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/corchan/config/MySpringMvcDispatcherSerlvetIntitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/corchan/config/MySpringMvcDispatcherSerlvetIntitializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/corchan/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/corchan/config/SpringConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/corchan/controllers/bController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/corchan/controllers/bController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/corchan/controllers/bController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/newthread.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/b.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/b.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,9 +35,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
         <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -59,20 +65,22 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Plugins/thymeleaf-3.0.11.RELEASE.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Plugins/postgresql-42.5.0.jar&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.33678162&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;aa99b0c333d3f38e240d2279a5bd301f&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -82,11 +90,15 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vinar\IdeaProjects\Corchan\src\main\resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\vinar\IdeaProjects\Corchan\src\main\webapp\WEB-INF\views" />
-      <recent name="C:\Users\vinar\IdeaProjects\Corchan\src\main\webapp\WEB-INF\views\b" />
+      <recent name="C:\Users\vinar\IdeaProjects\Corchan\src\main\resources" />
+      <recent name="C:\Users\vinar\IdeaProjects\Corchan\src\main\webapp\WEB-INF\img" />
       <recent name="C:\Users\vinar\IdeaProjects\Corchan\src\main\webapp\WEB-INF" />
-      <recent name="C:\Users\vinar\IdeaProjects\Corchan\src\main\java\Cordach" />
+      <recent name="C:\Users\vinar\IdeaProjects\Corchan\src\main\src" />
+      <recent name="C:\Users\vinar\IdeaProjects\Corchan\src\main\java\corchan\src" />
     </key>
   </component>
   <component name="RunManager">
@@ -199,8 +211,20 @@
       <workItem from="1674302187814" duration="42000" />
       <workItem from="1674302239835" duration="2706000" />
       <workItem from="1674304979462" duration="266000" />
-      <workItem from="1674305266495" duration="1891000" />
+      <workItem from="1674305266495" duration="6390000" />
+      <workItem from="1674311672998" duration="9128000" />
+      <workItem from="1674320863154" duration="4057000" />
+      <workItem from="1674324968622" duration="113000" />
+      <workItem from="1674325125933" duration="51000" />
     </task>
+    <task id="LOCAL-00001" summary="Start Page update">
+      <created>1674307225637</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1674307225637</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -222,5 +246,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Start Page update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start Page update" />
   </component>
 </project>

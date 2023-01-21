@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Новый тред</title>
+    <style>
+        body {
+            background: #EEEEEE;
+        }
+        textarea {
+            resize: none;
+            background-color: #FFFFFF;
+            width: 70%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 2px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<center><p style = color:#FF6600><font size="+5">Новый тред:</font></p>
+<form>
+    <textarea rows="10" cols="40" spellcheck="false"></textarea>
+    <br>
+    <form method="GET" action="/newthread">
+        <button class = "link" type="submit" style="font-size : 16px; width: 20%; height: 25px;"> Отправить </button>
+</form>
+</center>
+</body>
+</html>
